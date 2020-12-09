@@ -1,9 +1,19 @@
 import React from 'react'
-import {Text,StyleSheet} from 'react-native'
+import {Text,StyleSheet,ScrollView} from 'react-native'
+import {Fab,Icon} from 'native-base'
 
-const Home=()=>{
+const Home=({navigation,route})=>{
     return(
-        <Text>Home</Text>
+        <ScrollView contentContainerStyle={styles.container}>
+            <Text>List of Seasons goes here</Text>
+            <Fab
+            style={{backgroundColor:"#5067FF"}}
+            position="bottomRight"
+            onPress={()=>navigation.navigate('Add')}
+            >
+                <Icon name="add"/>
+            </Fab>
+        </ScrollView>
     )
 }
 
